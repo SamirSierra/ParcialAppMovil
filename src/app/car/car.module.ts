@@ -7,14 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { CarPageRoutingModule } from './car-routing.module';
 
 import { CarPage } from './car.page';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from '../services/http.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CarPageRoutingModule
+    CarPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [CarPage]
+  declarations: [CarPage],
+  providers: [HttpService]
 })
 export class CarPageModule {}

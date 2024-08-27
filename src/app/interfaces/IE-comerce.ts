@@ -10,7 +10,7 @@ export interface IEComerce {
 
 export enum Category {
     Electronics = "electronics",
-    Jeweler = "jeweler",
+    Jewelery = "jewelery",
     MenSClothing = "men's clothing",
     WomenSClothing = "women's clothing",
 }
