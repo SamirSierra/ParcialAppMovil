@@ -1,3 +1,4 @@
+import { Category } from './../interfaces/IE-comerce';
 import { HttpService } from './../services/http.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
@@ -11,18 +12,24 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-
   public products: IEComerce[] = [];
 
-  constructor(private readonly httpSrv: HttpService, private readonly navCtr: NavController) {}
+  url = environment.URL_BASE + 'products';
+
+  constructor(
+    private readonly httpSrv: HttpService,
+    private readonly navCtr: NavController
+  ) { }
 
   async ngOnInit() {
-    const url = environment.URL_BASE + 'products';
-    this.products = await this.httpSrv.get<IEComerce[]>(url);
+    this.products = await this.httpSrv.get<IEComerce[]>(this.url);
   }
 
-  public doNavegate(id:number) { 
+  public doNavegate(id: number) {
     console.log(id);
-    this.navCtr.navigateForward("details/"+ id);
+    this.navCtr.navigateForward('details/' + id);
+  }
+  async OptionSelection(event: any) {
+    this.products = await this.httpSrv.get<IEComerce[]>(this.url + '/category/' + event.detail.value)
   }
 }

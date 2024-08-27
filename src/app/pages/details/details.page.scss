@@ -1,11 +1,11 @@
-/* Global Styles */
+
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
   color: #333;
 }
 
-/* Header Styles */
+
 .custom-header {
   background: linear-gradient(135deg, #6a89cc, #b8e994);
   color: #fff;
@@ -31,7 +31,7 @@ body {
   margin-top: 10px;
 }
 
-/* Content Styles */
+
 .custom-content {
   padding: 15px;
   background-color: #f4f4f4;
@@ -78,12 +78,12 @@ body {
   display: flex;
   align-items: center;
   margin-top: 10px;
-  gap: 4px; /* Espacio reducido entre las estrellas */
+  gap: 4px; 
   justify-content: flex-start;
 }
 
 .star-icon {
-  color: #f1c40f; /* Color dorado para las estrellas */
+  color: #f1c40f; 
   font-size: 20px;
 }
 

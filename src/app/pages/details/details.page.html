@@ -1,30 +1,40 @@
 <ion-header [translucent]="true" class="custom-header">
+  <ion-fab>
+    <ion-fab-button>
+      <ion-icon name="arrow-back-outline" [routerLink]="['/home']"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   @if (response) {
-    <img alt="Image" src="{{response.image}}" class="header-image" />
-    <ion-card-header class="header-content">
-      <ion-card-title class="header-title">{{response.id}}: {{response.title}}</ion-card-title>
-    </ion-card-header>
+  <img alt="Image" src="{{response.image}}" class="header-image" />
+  <ion-card-header class="header-content">
+    <ion-card-title class="header-title"
+      >{{response.id}}: {{response.title}}</ion-card-title
+    >
+  </ion-card-header>
   }
 </ion-header>
 
 <ion-content [fullscreen]="true" class="custom-content">
   @if (response) {
-    <ion-card class="content-card">
-      <ion-card-content>
-        <p class="description">{{response.description}}</p>
-        <div class="details">
-          <span class="price">{{response.price | currency}}</span>
-          <span class="category">{{response.category}}</span>
-        </div>
-        <div class="rating">
-          <ion-icon name="star" class="star-icon"></ion-icon>
-          <ion-icon name="star" class="star-icon"></ion-icon>
-          <ion-icon name="star" class="star-icon"></ion-icon>
-          <ion-icon name="star" class="star-icon"></ion-icon>
-          <ion-icon name="star-outline" class="star-icon"></ion-icon>
-          <span class="rating-text">{{response.rating.rate}} ({{response.rating.count}} reviews)</span>
-        </div>
-      </ion-card-content>
-    </ion-card>
+  <ion-card class="content-card">
+    <ion-card-content>
+      <p class="description">{{response.description}}</p>
+      <div class="details">
+        <span class="price">{{response.price | currency}}</span>
+        <span class="category">{{response.category}}</span>
+      </div>
+      <div class="rating">
+        <ion-icon name="star" class="star-icon"></ion-icon>
+        <ion-icon name="star" class="star-icon"></ion-icon>
+        <ion-icon name="star" class="star-icon"></ion-icon>
+        <ion-icon name="star" class="star-icon"></ion-icon>
+        <ion-icon name="star-outline" class="star-icon"></ion-icon>
+        <span class="rating-text"
+          >{{response.rating.rate}} ({{response.rating.count}} reviews)</span
+        >
+      </div>
+    </ion-card-content>
+  </ion-card>
   }
 </ion-content>
