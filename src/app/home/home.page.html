@@ -1,12 +1,13 @@
+<ion-header>
+  
+        <ion-fab class="custom-fab top-right">
+          <ion-fab-button [routerLink]="['/car']">
+          <ion-icon name="cart"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+</ion-header>
 <ion-content [fullscreen]="true">
 
+               <app-card (doClick)="doNavegate($event)" *ngFor="let catalog  of products" [extraction]="catalog" ></app-card>
 
-               <app-card  *ngFor="let catalog  of products" [extraction]="catalog"></app-card>
-
-          <ion-fab>
-               <ion-fab-button [routerLink] ="['/car']">
-                 <ion-icon name="Cart"></ion-icon>
-               </ion-fab-button>
-             </ion-fab>
-             
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, Input,OnInit} from '@angular/core';
+import { Component, EventEmitter,Input, Output} from '@angular/core';
 
 
 @Component({
@@ -6,11 +6,14 @@ import { Component, Input,OnInit} from '@angular/core';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-  
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() extraction: any;
-  constructor() { }
-  ngOnInit() {
-    console.log(this.extraction.title);
+
+  @Output() doClick = new EventEmitter();
+
+  constructor() {}
+
+  click(id: number) {
+    this.doClick.emit(id);
   }
 }

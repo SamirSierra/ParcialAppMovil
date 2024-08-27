@@ -1,12 +1,25 @@
-<ion-card>
-  <img alt="Silhouette of mountains" src="{{extraction.image}}" />
-  <ion-card-header class="header">
-    <ion-card-title class="title">{{extraction.id}}:{{extraction.title}}</ion-card-title>
-  </ion-card-header>
+<div class="card-container">
+  <ion-card class="small-card">
+    <img alt="Silhouette of mountains" src="{{extraction.image}}" class="card-image" />
+    <ion-card-header class="header">
+      <ion-card-title class="title">{{extraction.id}}:{{extraction.title}}</ion-card-title>
+    </ion-card-header>
 
-  <ion-card-content>
-    <p>{{extraction.description}}</p>
-    <span class="price">{{extraction.price}}</span><br><br>
-    <span class="category">{{extraction.category}}</span>
-  </ion-card-content>
-</ion-card>
+    <ion-card-content>
+      <p class="description">{{extraction.description}}</p>
+      <span class="price">{{extraction.price}}</span><br><br>
+      <span class="category">{{extraction.category}}</span>
+      <div class="rating">
+        <ion-icon name="star" class="star-icon"></ion-icon>
+        <ion-icon name="star" class="star-icon"></ion-icon>
+        <ion-icon name="star" class="star-icon"></ion-icon>
+        <ion-icon name="star" class="star-icon"></ion-icon>
+        <ion-icon name="star-outline" class="star-icon"></ion-icon>
+        <span class="rating-text">{{extraction.rating.rate}} ({{extraction.rating.count}} reviews)</span>
+      </div>
+    </ion-card-content>
+
+    <ion-button (click)="click(extraction.id)">View Details</ion-button>
+  </ion-card>
+
+</div>
