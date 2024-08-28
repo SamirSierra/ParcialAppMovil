@@ -1,25 +1,36 @@
-        <ion-header [translucent]="true">
+<ion-header [translucent]="true" background="none">
   <ion-toolbar>
-    <div  class="div-ion-toolbar">
+    <div class="div-ion-toolbar">
       <ion-title class="ion-title">COMPRA EN ESA MONDA</ion-title>
-        <ion-fab-button [routerLink]="['/car']">
-          <ion-icon name="cart"></ion-icon>
-        </ion-fab-button>
+      <ion-fab-button [routerLink]="['/car']">
+        <ion-icon name="cart"></ion-icon>
+      </ion-fab-button>
     </div>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
   <div class="selector">
-     <ion-select aria-label="Selection" interface="action-sheet" placeholder="Select Selection" (ionChange)="OptionSelection($event)">
-        <ion-select-option value="electronics">Electronics</ion-select-option>
-        <ion-select-option value="jewelery">Jewelery</ion-select-option>
-        <ion-select-option value="men's clothing">MenSClothing</ion-select-option>
-        <ion-select-option value="women's clothing">WomenSClothing</ion-select-option>
-      </ion-select>
+    <ion-select
+      aria-label="Selection"
+      interface="action-sheet"
+      placeholder="Select Selection"
+      (ionChange)="OptionSelection($event)"
+    >
+      <ion-select-option value="electronics">Electronics</ion-select-option>
+      <ion-select-option value="jewelery">Jewelery</ion-select-option>
+      <ion-select-option value="men's clothing">MenSClothing</ion-select-option>
+      <ion-select-option value="women's clothing"
+        >WomenSClothing</ion-select-option
+      >
+    </ion-select>
   </div>
   <ion-item>
-    <div class="card-container" >
-      <app-card (doClick)="doNavegate($event)" *ngFor="let catalog  of products" [extraction]="catalog" ></app-card>
+    <div class="card-container">
+      <app-card
+        (doClick)="doNavegate($event)"
+        *ngFor="let catalog  of products"
+        [extraction]="catalog"
+      ></app-card>
     </div>
   </ion-item>
 </ion-content>

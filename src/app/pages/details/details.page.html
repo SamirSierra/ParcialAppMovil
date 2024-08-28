@@ -1,9 +1,7 @@
 <ion-header [translucent]="true" class="custom-header">
-  <ion-fab>
-    <ion-fab-button>
-      <ion-icon name="arrow-back-outline" [routerLink]="['/home']"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <ion-fab-button [routerLink]="['/home']">
+    <ion-icon name="arrow-back-outline" ></ion-icon>
+  </ion-fab-button>
 
   @if (response) {
   <img alt="Image" src="{{response.image}}" class="header-image" />
@@ -36,6 +34,6 @@
       </div>
     </ion-card-content>
   </ion-card>
-    <ion-button class="AddCar" (click)="sendToCar()">Add To Car</ion-button>
+  <ion-button class="AddCar" (click)="sendToCar()">Add To Car</ion-button>
   }
 </ion-content>

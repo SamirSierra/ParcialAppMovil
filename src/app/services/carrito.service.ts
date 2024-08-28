@@ -4,18 +4,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CarritoService {
-  public ItemCar: number[] = [];
+  public ItemCar: any[] = [];
 
-  constructor() { }
+  constructor() {}
 
-  ViewItemCar(): number[] {
+  ViewItemCar(): any[] {
     return this.ItemCar;
   }
-  addNewItemToCar(ProductWithId: number) {
+  addNewItemToCar(ProductWithId: any) {
     this.ItemCar.push(ProductWithId);
   }
 
   deleteItemToCar(ProductWithId: number) {
-    this.ItemCar.splice(ProductWithId);
+    const index = this.ItemCar.findIndex((item) => item.id === ProductWithId);
+    if (index !== -1) {
+      this.ItemCar.splice(index, 1);
+    }
   }
 }

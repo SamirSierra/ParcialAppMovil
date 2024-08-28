@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-title>SHOPIFY</ion-title>
+</ion-header>
+<ion-list>
+  <ion-card class="small-card">
+    <img alt="Silhouette of mountains" src="{{receive.image}}" class="card-image" />
+    <ion-card-header class="header">
+      <ion-card-title class="title">{{receive.title}}</ion-card-title>
+      
+    </ion-card-header>
+
+    <ion-card-content>
+      <span class="price">{{receive.price}}</span>
+    </ion-card-content>
+
+    <ion-button (click)="receiveId(receive.id)" fill="clear" color="danger" class="delete-button">
+      <ion-icon name="trash" ></ion-icon></ion-button>
+
+  </ion-card>
+</ion-list>

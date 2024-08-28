@@ -28,10 +28,18 @@ export class DetailsPage implements OnInit {
       console.log(this.response);
     });
   }
+
   sendToCar() { 
-    this.SrvCar.addNewItemToCar(this.response.id);
+    this.SrvCar.addNewItemToCar({
+      id: this.response.id,
+
+      price: this.response.price,
+      title: this.response.title,
+      image: this.response.image,
+    });
     console.log(this.SrvCar.ViewItemCar());
   }
+  
 
 
 }

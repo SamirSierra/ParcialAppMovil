@@ -16,11 +16,13 @@ export class CarPage implements OnInit {
   ) {}
 
   public response!: IEComerce;
-  id: number[] = this.SrvCar.ViewItemCar();
+  
+  public all : any[] = this.SrvCar.ViewItemCar();
 
   async ngOnInit() {
-    const url = environment.URL_BASE + 'products/' + this.id;
+    const url = environment.URL_BASE + 'products/' + this.all;
     this.response = await this.httpSrv.get<IEComerce>(url);
-    console.log(this.id);
+    console.log(this.all);
   }
+
 }

@@ -1,15 +1,14 @@
 <div class="card-container">
-  <ion-card class="small-card">
+
+  <ion-card class="small-card" (click)="click(extraction.id)">
     <img alt="Silhouette of mountains" src="{{extraction.image}}" class="card-image" />
     <ion-card-header class="header">
-      <ion-card-title class="title">{{extraction.id}}:{{extraction.title}}</ion-card-title>
+      <ion-card-title class="title">{{extraction.title}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <span class="price">{{extraction.price}}</span>
+      <span class="price">{{extraction.price | currency}}</span>
     </ion-card-content>
 
-    <ion-button (click)="click(extraction.id)">View Details</ion-button>
   </ion-card>
-
 </div>
