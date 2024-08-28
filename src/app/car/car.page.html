@@ -1,10 +1,18 @@
 <ion-header [translucent]="true">
-    <ion-fab-button [routerLink]="['/home']">
-      <ion-icon name="arrow-back-outline" ></ion-icon>
-    </ion-fab-button>
-
+  <ion-fab-button [routerLink]="['/home']">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-fab-button>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <app-render *ngFor="let showAll  of all" [receive]="showAll"></app-render>
+  <app-render *ngFor="let showAll of all" [receive]="showAll"></app-render>
 </ion-content>
+
+<h1 class="precio">Total: {{totalPay | currency}}</h1>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" class="btn-pay" (click)="showPaymentConfirmation()">
+      Pay
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

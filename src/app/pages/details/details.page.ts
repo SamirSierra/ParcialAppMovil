@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+  
   public response!: IEComerce;
 
 
@@ -21,6 +22,7 @@ export class DetailsPage implements OnInit {
   ) {}
 
   async ngOnInit() {
+    
     this.params.params.subscribe(async (params) => {
       const url = environment.URL_BASE + 'products/' + params['id'];
       console.log(params);

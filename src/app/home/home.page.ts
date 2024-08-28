@@ -29,6 +29,7 @@ export class HomePage implements OnInit {
     console.log(id);
     this.navCtr.navigateForward('details/' + id);
   }
+  
   async OptionSelection(event: any) {
     this.products = await this.httpSrv.get<IEComerce[]>(this.url + '/category/' + event.detail.value)
   }
