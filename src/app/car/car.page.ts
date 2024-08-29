@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../services/http.service';
-import { IEComerce } from '../interfaces/IE-comerce';
 import { CarritoService } from '../services/carrito.service';
-import { environment } from 'src/environments/environment.prod';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -29,6 +26,8 @@ export class CarPage {
     console.log(this.totalPay);
   }
   async showPaymentConfirmation() {
+    this.SrvCar.deleteArray();
+    
     const alert = await this.alertCtlr.create({
       header: 'Payment Successful',
       message: 'Your payment has been processed successfully!',
@@ -36,5 +35,8 @@ export class CarPage {
     });
 
     await alert.present();
+    console.log(this.SrvCar.ItemCar);
+   
   }
+
 }

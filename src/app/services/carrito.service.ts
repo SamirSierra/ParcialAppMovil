@@ -21,4 +21,7 @@ export class CarritoService {
       this.ItemCar.splice(index, 1);
     }
   }
+  deleteArray() { 
+    this.ItemCar = [];
+  }
 }
